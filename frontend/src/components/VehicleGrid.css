@@ -1,0 +1,76 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.vg-header {
+    background-color: black;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+
+.vg-header-in {
+    float: left;
+    margin: 0 10px;
+    color: rgb(160, 156, 156);
+    font-weight: normal;
+}
+
+.vg-non-header {
+    margin-top: 7px;
+}
+
+.cf:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.vg-button {
+    font-weight: bold;
+    background-color: steelblue;
+    float:right;
+    margin-right: 2%;
+    margin-top: .7%;
+    color: white;
+}
+
+.vg-links,
+.vg-links:hover {
+    text-decoration: none;
+}
+
+.vg-links {
+    color: rgb(160, 156, 156);
+}
+
+.vg-links:hover {
+    color: rgb(197, 194, 194);
+}
+
+.vg-border {
+    border: none !important;
+}
+
+td {
+    text-align: left;
+    border-top: 1px solid lightgray !important;
+}
+
+.fa-pencil,
+.fa-trash {
+    color: white;
+    font-size: 22px;
+}
+
+.trash-button {
+    background-color: rgb(224, 33, 33);
+    border-radius: 7px;
+    height: 35px;
+    width: 35px;
+}
+
+.pencil-button {
+    margin-right: 3px;
+    background-color: forestgreen;
+    border-radius: 7px;
+    height: 35px;
+    width: 35px;
+}

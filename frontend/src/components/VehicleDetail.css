@@ -1,0 +1,79 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.vd-header {
+    background-color: black;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+
+.vd-header-in {
+    float: left;
+    margin: 0 10px;
+    color: rgb(160, 156, 156);
+    font-weight: normal;
+}
+
+.vd-non-header {
+    margin-top: 7px;
+}
+
+.cf:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.vd-links,
+.vd-links:hover {
+    text-decoration: none;
+}
+
+.vd-links {
+    color: rgb(160, 156, 156);
+}
+
+.vd-links:hover {
+    color: rgb(197, 194, 194);
+}
+
+.card-header {
+    background-color: lightsteelblue;;
+}
+
+.vd-strong-input-parent {
+    display: flex;
+    margin: 8px 0;
+}
+
+.vd-strong-input {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.vd-input-left,
+.vd-input-right {
+    width: 97%;
+    border-color: lightsteelblue;
+}
+
+.card {
+    margin: 3% 3% 0 3%;
+}
+
+.vd-save-button {
+    float: right;
+    background-color: forestgreen;
+    color: white;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.fa-download {
+    margin-left: 2%;
+}
+
+.card-header {
+    color: white;
+    font-weight: bold;
+}
