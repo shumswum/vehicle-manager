@@ -2,7 +2,6 @@
 
 .vd-header {
     background-color: black;
-    border-radius: 5px;
     padding: 15px 0;
 }
 
@@ -76,4 +75,12 @@
 .card-header {
     color: white;
     font-weight: bold;
+}
+
+.react-select {
+    margin-right: 3%;
+}
+
+.sale-price {
+    width: 48.1%;
 }
