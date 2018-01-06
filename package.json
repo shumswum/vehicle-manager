@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/shumswum/vehicle-manager/issues"
   },
-  "homepage": "https://github.com/shumswum/vehicle-manager#readme"
+  "homepage": "https://github.com/shumswum/vehicle-manager#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1"
+  }
 }
