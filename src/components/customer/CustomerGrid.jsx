@@ -50,7 +50,7 @@ class CustomerGrid extends React.Component {
     return this.props.customers.map(customer => {
       if (customer.DeleteDate === null) {
         return (
-          <tr>
+          <tr key={customer.id}>
             <td>{customer.FirstName}</td>
             <td>{customer.LastName}</td>
             <td>{customer.EmailAddress}</td>
