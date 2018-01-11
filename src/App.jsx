@@ -5,7 +5,7 @@ import CustomerGrid from './components/customer/CustomerGrid.jsx';
 import CustomerDetail from './components/customer/CustomerDetail.jsx';
 import SaleGrid from './components/sale/SaleGrid';
 import SaleDetail from './components/sale/SaleDetail';
-import Dashboard from './components/Dashboard.jsx';
+import Dashboard from './components/dashboard/Dashboard';
 import { HashRouter as Router,
         Route
       } from 'react-router-dom';

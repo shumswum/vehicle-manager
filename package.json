@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"node backend/server/index.js\" \"node frontend/build/start.js\""
+    "start": "concurrently \"node backend/server/index.js\" \"npm run create-react-app\"",
+    "create-react-app": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,25 @@
   },
   "homepage": "https://github.com/shumswum/vehicle-manager#readme",
   "dependencies": {
-    "concurrently": "^3.5.1"
-  }
+    "concurrently": "^3.5.1",
+    "axios": "^0.17.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "react": "^16.0.0",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "react-select": "^1.1.0",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^4.4.2",
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.20.1",
+    "sequelize-cli": "^3.0.0"
+  },
+  "proxy": "http://localhost:3001/"
 }
