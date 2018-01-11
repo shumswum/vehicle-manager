@@ -28,7 +28,7 @@ class SaleGrid extends React.Component {
   renderSales() {
     return this.state.sales.map(sale => {
       return (
-        <tr>
+        <tr key={sale.id}>
           <td>{`${sale.Customer.FirstName} ${sale.Customer.LastName}`}</td>
           <td>{`${sale.Vehicle.Make} ${sale.Vehicle.Model}`}</td>
           <td>{sale.InvoiceDate}</td>

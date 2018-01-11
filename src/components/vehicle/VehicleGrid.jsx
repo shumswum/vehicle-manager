@@ -50,7 +50,7 @@ class VehicleGrid extends React.Component {
     return this.props.vehicles.map(vehicle => {
       if (vehicle.DeleteDate === null) {
         return (
-          <tr>
+          <tr key={vehicle.id}>
             <td>{vehicle.Make}</td>
             <td>{vehicle.Model}</td>
             <td>{vehicle.VehicleType}</td>
