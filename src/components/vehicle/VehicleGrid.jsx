@@ -47,7 +47,6 @@ class VehicleGrid extends React.Component {
   }
 
   renderVehicles() {
-    console.log(this.props.vehicles);
     return this.props.vehicles.map(vehicle => {
       if (vehicle.DeleteDate === null) {
         return (

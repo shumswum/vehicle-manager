@@ -38,7 +38,6 @@ class CustomerDetail extends React.Component {
     axios
       .get(`api/customers/${this.props.match.params.id}`)
       .then(customers => {
-        console.log(customers)
         this.setState({
           FirstName: customers.data.FirstName,
           LastName: customers.data.LastName,

@@ -2,6 +2,7 @@ import React from "react";
 import "../VehicleGrid.css";
 import Navbar from "../Navbar.jsx";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class SaleGrid extends React.Component {
   constructor(props) {
@@ -10,8 +11,6 @@ class SaleGrid extends React.Component {
     this.state = {
       sales: []
     };
-
-    this.handleDeleteButton = this.handleDeleteButton.bind(this);
   }
 
   //Needs functioning edit button and delete button and will need the detail page built with custom css
@@ -22,7 +21,6 @@ class SaleGrid extends React.Component {
       .then(s => s.json())
       .then(sales => {
         this.setState({ sales });
-        console.log(sales);
       });
   }
 
@@ -37,15 +35,10 @@ class SaleGrid extends React.Component {
           <td>{sale.SalePrice}</td>
           <td>
             <Link to={`/sales/detail/${sale.id}`}><button className="pencil-button"><i className="fa fa-pencil" aria-hidden="true"></i></button></Link>
-          <button className="trash-button"><i className="fa fa-trash" aria-hidden="true"></i></button>
           </td>
         </tr>
       );
     });
-  }
-
-  handleDeleteButton() {
-
   }
 
   render() {

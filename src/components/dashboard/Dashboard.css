@@ -1,2 +1,64 @@
 @import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+.top,
+.bottom {
+    display: flex;
+    border: 2px solid lightgray;
+    margin-right: 8%;
+    margin-left: 8%;
+}
+
+.vehicles,
+.customers,
+.sales {
+    text-align: center;
+    flex: 1;
+}
+
+.revenue,
+.vehicle-cost,
+.pending-sales {
+    text-align: center;
+    flex: 1;
+}
+
+.vehicles,
+.vehicle-cost {
+    border-right: 2px solid lightgray;
+}
+
+.sales,
+.revenue {
+    border-left: 2px solid lightgray;
+}
+
+.top {
+    margin-top: 7%;
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.content-sizing {
+    font-size: 50px;
+    display: block;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.description {
+    text-align: center;
+    margin-top: 20px;
+}

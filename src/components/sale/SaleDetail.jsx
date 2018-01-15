@@ -16,8 +16,8 @@ class SaleDetail extends React.Component {
       invoiceDate: "",
       paymentReceived: "",
       salePrice: "",
-      customerValue: '',
-      vehicleValue: ''
+      customerValue: "",
+      vehicleValue: ""
     };
 
     this.renderVehicleSelect = this.renderVehicleSelect.bind(this);
@@ -46,6 +46,28 @@ class SaleDetail extends React.Component {
           .catch(err => console.log(err));
       })
       .catch(err => console.log(err));
+
+    if (this.props.match.params.id) {
+      let index = this.props.match.params.id;
+      axios
+        .get("/api/sales")
+        .then(sales => {
+          let sale = sales.data[index];
+          let paymentReceived = "";
+          if (sale.PaymentReceivedDate != null) {
+            paymentReceived = sale.PaymentReceivedDate;
+          }
+
+          this.setState({
+            paymentReceived,
+            customerValue: sale.Customer.id,
+            vehicleValue: sale.Vehicle.id,
+            invoiceDate: sale.InvoiceDate,
+            salePrice: sale.SalePrice
+          });
+        })
+        .catch(err => console.log(err));
+    }
   }
 
   handleVehicleChange(e) {
@@ -68,15 +90,15 @@ class SaleDetail extends React.Component {
 
   handleSave() {
     axios
-        .post('api/sales/', {
-          "SalePrice": this.state.salePrice,
-          "InvoiceDate": this.state.invoiceDate,
-          "PaymentRecievedDate": this.state.paymentReceived,
-          "vehicle_id": this.state.vehicleValue,
-          "customer_id": this.state.customerValue
-        })
-        .then(() => this.props.history.push('/sales/grid'))
-        .catch(err => console.log(err));
+      .put(`api/sales/${this.props.match.params.id}`, {
+        SalePrice: this.state.salePrice,
+        InvoiceDate: this.state.invoiceDate,
+        PaymentReceivedDate: this.state.paymentReceived,
+        vehicle_id: this.state.vehicleValue,
+        customer_id: this.state.customerValue
+      })
+      .then(() => this.props.history.push("/sales/grid"))
+      .catch(err => console.log(err));
   }
 
   renderVehicleSelect() {
@@ -84,19 +106,22 @@ class SaleDetail extends React.Component {
 
     if (this.state.vehicle.length) {
       this.state.vehicle.map(current => {
-        if (current.DeleteDate === null) {
           options.push({
             value: current.id,
             label: `${current.Year} ${current.Make} ${current.Model}`
           });
           return true;
-        } else {
-          return false;
-        }
       });
     }
 
-    return <Select className="react-select" value={this.state.vehicleValue} options={options} onChange={this.handleVehicleChange}/>;
+    return (
+      <Select
+        className="react-select"
+        value={this.state.vehicleValue}
+        options={options}
+        onChange={this.handleVehicleChange}
+      />
+    );
   }
 
   renderCustomerSelect() {
@@ -104,7 +129,6 @@ class SaleDetail extends React.Component {
 
     if (this.state.customer.length) {
       this.state.customer.map(current => {
-        if (current.DeleteDate === null) {
           options.push({
             value: current.id,
             label: `${current.FirstName} ${current.LastName} ${
@@ -112,13 +136,17 @@ class SaleDetail extends React.Component {
             }`
           });
           return true;
-        } else {
-          return false;
-        }
       });
     }
 
-    return <Select className="react-select" value={this.state.customerValue} options={options} onChange={this.handleCustomerChange}/>;
+    return (
+      <Select
+        className="react-select"
+        value={this.state.customerValue}
+        options={options}
+        onChange={this.handleCustomerChange}
+      />
+    );
   }
 
   render() {
@@ -131,7 +159,7 @@ class SaleDetail extends React.Component {
 
     return (
       <div className="vd">
-        <Navbar/>
+        <Navbar />
         <div>
           <div className="card">
             <div className="card-header">{addEdit}</div>
@@ -155,13 +183,23 @@ class SaleDetail extends React.Component {
                   <h6>
                     <strong>Invoice Date</strong>
                   </h6>
-                  <input id="invoiceDate" value={this.state.invoiceDate} className="vd-input-left form-control" onChange={this.handleInput}/>
+                  <input
+                    id="invoiceDate"
+                    value={this.state.invoiceDate}
+                    className="vd-input-left form-control"
+                    onChange={this.handleInput}
+                  />
                 </div>
                 <div className="vd-strong-input">
                   <h6>
                     <strong>Payment Received Date</strong>
                   </h6>
-                  <input id="paymentReceived" value={this.state.paymentReceived} className="vd-input-right form-control" onChange={this.handleInput}/>
+                  <input
+                    id="paymentReceived"
+                    value={this.state.paymentReceived}
+                    className="vd-input-right form-control"
+                    onChange={this.handleInput}
+                  />
                 </div>
               </div>
               <div className="vd-strong-input-parent">
@@ -169,12 +207,21 @@ class SaleDetail extends React.Component {
                   <h6>
                     <strong>Sale Price</strong>
                   </h6>
-                  <input id="salePrice" value={this.state.salePrice} type="number" className="vd-input-left form-control sale-price" onChange={this.handleInput}/>
+                  <input
+                    id="salePrice"
+                    value={this.state.salePrice}
+                    type="number"
+                    className="vd-input-left form-control sale-price"
+                    onChange={this.handleInput}
+                  />
                 </div>
               </div>
             </div>
             <div className="card-footer">
-              <button className="btn btn-default vd-save-button" onClick={this.handleSave}>
+              <button
+                className="btn btn-default vd-save-button"
+                onClick={this.handleSave}
+              >
                 Save<i className="fa fa-download" aria-hidden="true" />
               </button>
             </div>

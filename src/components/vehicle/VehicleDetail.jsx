@@ -116,7 +116,6 @@ class VehicleDetail extends React.Component {
     axios
       .get(`/api/vehicles/${this.props.match.params.id}`)
       .then(vehicle => {
-        console.log(vehicle);
         this.setState({
           Make: vehicle.data.Make,
           Model: vehicle.data.Model,
