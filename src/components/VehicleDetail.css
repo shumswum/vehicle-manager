@@ -1,40 +1,5 @@
 @import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-.vd-header {
-    background-color: black;
-    padding: 15px 0;
-}
-
-.vd-header-in {
-    float: left;
-    margin: 0 10px;
-    color: rgb(160, 156, 156);
-    font-weight: normal;
-}
-
-.vd-non-header {
-    margin-top: 7px;
-}
-
-.cf:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.vd-links,
-.vd-links:hover {
-    text-decoration: none;
-}
-
-.vd-links {
-    color: rgb(160, 156, 156);
-}
-
-.vd-links:hover {
-    color: rgb(197, 194, 194);
-}
-
 .card-header {
     background-color: lightsteelblue;;
 }

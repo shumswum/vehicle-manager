@@ -1,6 +1,7 @@
 import React from "react";
 import "../VehicleGrid.css";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar.jsx";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import axios from "axios";
@@ -77,29 +78,7 @@ class CustomerGrid extends React.Component {
   render() {
     return (
       <div className="vg">
-        <div className="vg-header cf">
-          <h4 className="vg-header-in">Vehicle Manager</h4>
-          <h6 className="vg-header-in vg-non-header">
-            <Link to="/" className="vg-links">
-              Dashboard
-            </Link>
-          </h6>
-          <h6 className="vg-header-in vg-non-header">
-            <Link to="/customers/grid" className="vg-links">
-              Customers
-            </Link>
-          </h6>
-          <h6 className="vg-header-in vg-non-header">
-            <Link to="/sales/grid" className="vg-links">
-              Sales
-            </Link>
-          </h6>
-          <h6 className="vg-header-in vg-non-header">
-            <Link to="/vehicles/grid" className="vg-links">
-              Vehicles
-            </Link>
-          </h6>
-        </div>
+        <Navbar/>
         <div>
           <Link to="/customers/detail">
             <button className="btn vg-button">

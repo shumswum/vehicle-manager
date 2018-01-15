@@ -1,6 +1,7 @@
 import React from "react";
 import "react-select/dist/react-select.css";
 import "../VehicleDetail.css";
+import Navbar from "../Navbar.jsx";
 import { Link } from "react-router-dom";
 import Select from "react-select";
 import axios from "axios";
@@ -130,29 +131,7 @@ class SaleDetail extends React.Component {
 
     return (
       <div className="vd">
-        <div className="vd-header cf">
-          <h4 className="vd-header-in">Vehicle Manager</h4>
-          <h6 className="vd-header-in vd-non-header">
-            <Link to="/" className="vd-links">
-              Dashboard
-            </Link>
-          </h6>
-          <h6 className="vd-header-in vd-non-header">
-            <Link to="/customers/grid" className="vd-links">
-              Customers
-            </Link>
-          </h6>
-          <h6 className="vd-header-in vd-non-header">
-            <Link to="/sales/grid" className="vd-links">
-              Sales
-            </Link>
-          </h6>
-          <h6 className="vd-header-in vd-non-header">
-            <Link to="/vehicles/grid" className="vd-links">
-              Vehicles
-            </Link>
-          </h6>
-        </div>
+        <Navbar/>
         <div>
           <div className="card">
             <div className="card-header">{addEdit}</div>

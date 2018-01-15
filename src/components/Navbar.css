@@ -1,0 +1,36 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.vg-header {
+    background-color: black;
+    padding: 15px 0;
+}
+
+.vg-header-in {
+    float: left;
+    margin: 0 10px;
+    color: rgb(160, 156, 156);
+    font-weight: normal;
+}
+
+.vg-non-header {
+    margin-top: 7px;
+}
+
+.cf:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.vg-links,
+.vg-links:hover {
+    text-decoration: none;
+}
+
+.vg-links {
+    color: rgb(160, 156, 156);
+}
+
+.vg-links:hover {
+    color: rgb(197, 194, 194);
+}
